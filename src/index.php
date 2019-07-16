@@ -9,5 +9,7 @@
 </head>
 <body>
 <a href="/binary_tree.php">Binary Tree</a>
+<br>
+<a href="/counting_sort.php">Counting Sort</a>
 </body>
 </html>

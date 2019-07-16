@@ -70,7 +70,7 @@ class BalancedBinaryTree
      */
     public function searchByKey(int $key)
     {
-        return $this->searchCommand->doSearch($key, $this->_root);
+        return $this->searchCommand->doSearch($key, $this->_root, 0);
     }
 
     /**
