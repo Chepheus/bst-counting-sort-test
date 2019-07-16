@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  nginx-php-fpm:
+    image: webdevops/php-nginx-dev:7.3
+    restart: always
+    container_name: nginx-php
+    ports:
+      - 80:80
+    networks:
+      custom_network:
+        ipv4_address: 172.30.0.10
+    environment:
+      - WEB_DOCUMENT_ROOT=/app
+      - WEB_DOCUMENT_INDEX=index.php
+    volumes:
+      - ./src:/app
+
+networks:
+  custom_network:
+    name: custom_network
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.0.0/24
